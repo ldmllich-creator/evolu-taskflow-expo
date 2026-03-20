@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow Mobile</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh; color: #fff; padding: 40px 20px; }
+.container { max-width: 480px; margin: 0 auto; }
+h1 { font-size: 28px; font-weight: 900; text-align: center; margin-bottom: 8px; background: linear-gradient(90deg, #00d4ff, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { text-align: center; color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 32px; }
+.screens { display: flex; flex-direction: column; gap: 12px; }
+.screen-link { display: flex; align-items: center; gap: 16px; padding: 18px 20px; background: rgba(255,255,255,0.06); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; text-decoration: none; color: #fff; transition: all 0.3s ease; }
+.screen-link:hover, .screen-link:active { background: rgba(255,255,255,0.12); border-color: rgba(0,212,255,0.4); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,212,255,0.15); }
+.screen-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+.screen-icon.dashboard { background: linear-gradient(135deg, #00d4ff33, #00d4ff11); }
+.screen-icon.tasks { background: linear-gradient(135deg, #8B5CF633, #8B5CF611); }
+.screen-icon.profile { background: linear-gradient(135deg, #F59E0B33, #F59E0B11); }
+.screen-icon.notifications { background: linear-gradient(135deg, #EF444433, #EF444411); }
+.screen-icon.settings { background: linear-gradient(135deg, #10B98133, #10B98111); }
+.screen-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.screen-info p { font-size: 12px; color: rgba(255,255,255,0.4); }
+.arrow { margin-left: auto; color: rgba(255,255,255,0.3); font-size: 20px; }
+.qr-section { margin-top: 40px; text-align: center; padding: 24px; background: rgba(255,255,255,0.04); border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); }
+.qr-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.qr-section p { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+#qr-canvas { background: #fff; border-radius: 12px; padding: 12px; display: inline-block; }
+.url-display { margin-top: 16px; padding: 10px 16px; background: rgba(0,0,0,0.3); border-radius: 10px; font-family: monospace; font-size: 13px; color: #00d4ff; word-break: break-all; }
+.footer { text-align: center; margin-top: 32px; font-size: 11px; color: rgba(255,255,255,0.2); }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📱 TaskFlow Mobile</h1>
+  <p class="subtitle">EVOLU TaskFlow — 5 мобильных экранов</p>
+  <div class="screens">
+    <a href="01-taskflow-dashboard.html" class="screen-link"><div class="screen-icon dashboard">🏠</div><div class="screen-info"><h3>Dashboard</h3><p>Главная, прогресс, статистика</p></div><span class="arrow">→</span></a>
+    <a href="02-taskflow-tasks.html" class="screen-link"><div class="screen-icon tasks">✅</div><div class="screen-info"><h3>My Tasks</h3><p>Список задач, фильтры, приоритеты</p></div><span class="arrow">→</span></a>
+    <a href="03-taskflow-profile.html" class="screen-link"><div class="screen-icon profile">👤</div><div class="screen-info"><h3>Profile</h3><p>Профиль, достижения, настройки</p></div><span class="arrow">→</span></a>
+    <a href="04-taskflow-notifications.html" class="screen-link"><div class="screen-icon notifications">🔔</div><div class="screen-info"><h3>Notifications</h3><p>Уведомления, фильтры</p></div><span class="arrow">→</span></a>
+    <a href="05-taskflow-settings.html" class="screen-link"><div class="screen-icon settings">⚙️</div><div class="screen-info"><h3>Settings</h3><p>Внешний вид, безопасность</p></div><span class="arrow">→</span></a>
+  </div>
+  <div class="qr-section">
+    <h3>📸 QR-код для телефона</h3>
+    <p>Отсканируйте, чтобы открыть на телефоне</p>
+    <div id="qr-canvas"></div>
+    <div class="url-display" id="url-display">Определяю адрес...</div>
+  </div>
+  <p class="footer">EVOLU TaskFlow • Stitch Export • 2026</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const url = window.location.href;
+    document.getElementById('url-display').textContent = url;
+    new QRCode(document.getElementById('qr-canvas'), {
+      text: url, width: 200, height: 200,
+      colorDark: '#0f0c29', colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  });
+</script>
+</body>
+</html>
