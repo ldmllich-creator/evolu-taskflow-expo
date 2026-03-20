@@ -1,1 +1,1 @@
-# EVOLU TaskFlow Expo\n\nMobile screens for TaskFlow app, exported from Google Stitch.\n\n## Screens\n- Dashboard\n- Tasks\n- Profile\n- Notifications\n- Settings\n\n[Live Demo](https://ldmllich-creator.github.io/evolu-taskflow-expo/)
+# Info TaskFlow Expo\n\nMobile screens for TaskFlow app, exported from Google Stitch.\n\n## Screens\n- Dashboard\n- Tasks\n- Profile\n- Notifications\n- Settings\n\n[Live Demo](https://ldmllich-creator.github.io/evolu-taskflow-expo/)
