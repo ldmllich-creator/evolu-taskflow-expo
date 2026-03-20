@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: { colors: { "primary": "#3B82F6", "accent-violet": "#8B5CF6", "background-light": "#f5f7f8", "background-dark": "#0F172A" }, fontFamily: { "display": ["Inter", "sans-serif"] }, borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"} } },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; min-height: max(884px, 100dvh); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fill-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="flex-1 overflow-y-auto pb-24">
+<div class="flex items-center justify-between p-4 sticky top-0 bg-background-dark/80 backdrop-blur-md z-10">
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-800 transition-colors"><span class="material-symbols-outlined text-slate-100">arrow_back</span></button>
+<h1 class="text-lg font-bold tracking-tight">Profile</h1>
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-800 transition-colors"><span class="material-symbols-outlined text-slate-100">settings</span></button>
+</div>
+<div class="flex flex-col items-center px-4 py-6">
+<div class="relative">
+<div class="size-32 rounded-full bg-gradient-to-br from-primary to-accent-violet flex items-center justify-center border-4 border-slate-800 shadow-xl overflow-hidden">
+<span class="text-4xl font-bold text-white tracking-tighter">LM</span>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full border-2 border-background-dark uppercase tracking-wider">Pro</div>
+</div>
+<h2 class="mt-4 text-2xl font-bold text-slate-100">Ludmila M.</h2>
+<p class="text-slate-400 text-sm font-medium">ludmila.m@taskflow.io</p>
+</div>
+<div class="grid grid-cols-3 gap-3 px-4 py-2">
+<div class="flex flex-col items-center justify-center p-4 rounded-xl bg-slate-800/50 border border-slate-700/50"><span class="text-xl font-bold text-primary">24</span><span class="text-[10px] text-slate-400 uppercase font-semibold mt-1">Projects</span></div>
+<div class="flex flex-col items-center justify-center p-4 rounded-xl bg-slate-800/50 border border-slate-700/50"><span class="text-xl font-bold text-accent-violet">156</span><span class="text-[10px] text-slate-400 uppercase font-semibold mt-1">Tasks Done</span></div>
+<div class="flex flex-col items-center justify-center p-4 rounded-xl bg-slate-800/50 border border-slate-700/50"><span class="text-xl font-bold text-emerald-400">92%</span><span class="text-[10px] text-slate-400 uppercase font-semibold mt-1">Success</span></div>
+</div>
+<div class="px-4 mt-8">
+<div class="flex items-center justify-between mb-4"><h3 class="text-lg font-bold text-slate-100">Achievements</h3><button class="text-primary text-sm font-semibold">View All</button></div>
+<div class="grid grid-cols-4 gap-2">
+<div class="flex flex-col items-center gap-2"><div class="size-14 rounded-full bg-orange-500/10 flex items-center justify-center border border-orange-500/20"><span class="material-symbols-outlined text-orange-500 fill-icon">wb_sunny</span></div><span class="text-[10px] text-slate-400 font-medium text-center">Early Bird</span></div>
+<div class="flex flex-col items-center gap-2"><div class="size-14 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20"><span class="material-symbols-outlined text-primary fill-icon">local_fire_department</span></div><span class="text-[10px] text-slate-400 font-medium text-center">Streak Master</span></div>
+<div class="flex flex-col items-center gap-2"><div class="size-14 rounded-full bg-accent-violet/10 flex items-center justify-center border border-accent-violet/20"><span class="material-symbols-outlined text-accent-violet fill-icon">groups</span></div><span class="text-[10px] text-slate-400 font-medium text-center">Team Player</span></div>
+<div class="flex flex-col items-center gap-2"><div class="size-14 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20"><span class="material-symbols-outlined text-emerald-500 fill-icon">verified</span></div><span class="text-[10px] text-slate-400 font-medium text-center">Perfectionist</span></div>
+</div>
+</div>
+<div class="px-4 mt-8">
+<h3 class="text-lg font-bold text-slate-100 mb-2 px-1">Account Settings</h3>
+<div class="space-y-1">
+<a class="flex items-center justify-between p-4 rounded-xl hover:bg-slate-800/50 transition-colors group" href="#"><div class="flex items-center gap-4"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">person_edit</span><span class="text-slate-200 font-medium">Edit Profile</span></div><span class="material-symbols-outlined text-slate-600">chevron_right</span></a>
+<a class="flex items-center justify-between p-4 rounded-xl hover:bg-slate-800/50 transition-colors group" href="04-taskflow-notifications.html"><div class="flex items-center gap-4"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">notifications</span><span class="text-slate-200 font-medium">Notifications</span></div><span class="material-symbols-outlined text-slate-600">chevron_right</span></a>
+<a class="flex items-center justify-between p-4 rounded-xl hover:bg-slate-800/50 transition-colors group" href="#"><div class="flex items-center gap-4"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">lock</span><span class="text-slate-200 font-medium">Privacy</span></div><span class="material-symbols-outlined text-slate-600">chevron_right</span></a>
+<a class="flex items-center justify-between p-4 rounded-xl hover:bg-slate-800/50 transition-colors group" href="#"><div class="flex items-center gap-4"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">help_outline</span><span class="text-slate-200 font-medium">Help Center</span></div><span class="material-symbols-outlined text-slate-600">chevron_right</span></a>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 border-t border-slate-800 bg-background-dark/95 backdrop-blur-lg px-4 pb-6 pt-3 flex items-center justify-between z-20">
+<a class="flex flex-col items-center gap-1 group" href="01-taskflow-dashboard.html"><span class="material-symbols-outlined text-slate-500 group-hover:text-slate-300">home</span><span class="text-[10px] font-medium text-slate-500 group-hover:text-slate-300">Home</span></a>
+<a class="flex flex-col items-center gap-1 group" href="02-taskflow-tasks.html"><span class="material-symbols-outlined text-slate-500 group-hover:text-slate-300">check_box</span><span class="text-[10px] font-medium text-slate-500 group-hover:text-slate-300">Tasks</span></a>
+<a class="flex flex-col items-center gap-1 group" href="#"><span class="material-symbols-outlined text-slate-500 group-hover:text-slate-300">calendar_month</span><span class="text-[10px] font-medium text-slate-500 group-hover:text-slate-300">Calendar</span></a>
+<a class="flex flex-col items-center gap-1" href="#"><span class="material-symbols-outlined text-primary fill-icon">person</span><span class="text-[10px] font-bold text-primary">Profile</span></a>
+<a class="flex flex-col items-center gap-1 group" href="05-taskflow-settings.html"><span class="material-symbols-outlined text-slate-500 group-hover:text-slate-300">settings</span><span class="text-[10px] font-medium text-slate-500 group-hover:text-slate-300">Settings</span></a>
+</div>
+</body></html>
