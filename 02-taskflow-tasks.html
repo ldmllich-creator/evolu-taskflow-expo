@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow - My Tasks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: { colors: { "primary": "#3B82F6", "accent": "#8B5CF6", "background-light": "#f5f5f8", "background-dark": "#0F172A" }, fontFamily: { "display": ["Inter"] }, borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"} } },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; min-height: max(884px, 100dvh); }
+        .active-tab { color: #3B82F6; }
+        .priority-high { background-color: #ef4444; }
+        .priority-medium { background-color: #f59e0b; }
+        .priority-low { background-color: #10b981; }
+    </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-md border-b border-slate-800 px-4 py-4">
+<div class="flex items-center justify-between max-w-2xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="bg-gradient-to-br from-primary to-accent p-2 rounded-lg">
+<span class="material-symbols-outlined text-white text-2xl">layers</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight">My Tasks</h1>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-slate-800 rounded-full transition-colors"><span class="material-symbols-outlined">search</span></button>
+<button class="p-2 hover:bg-slate-800 rounded-full transition-colors"><span class="material-symbols-outlined">add_circle</span></button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<button class="px-5 py-2 rounded-full bg-slate-800 text-slate-300 text-sm font-medium whitespace-nowrap hover:bg-slate-700 transition-colors">All</button>
+<button class="px-5 py-2 rounded-full bg-primary text-white text-sm font-medium whitespace-nowrap shadow-lg shadow-primary/20">Today</button>
+<button class="px-5 py-2 rounded-full bg-slate-800 text-slate-300 text-sm font-medium whitespace-nowrap hover:bg-slate-700 transition-colors">Upcoming</button>
+<button class="px-5 py-2 rounded-full bg-slate-800 text-slate-300 text-sm font-medium whitespace-nowrap hover:bg-slate-700 transition-colors">Completed</button>
+</div>
+<div class="mt-6 space-y-3">
+<div class="group flex items-center justify-between p-4 bg-slate-800/40 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+<div class="flex items-center gap-4"><div class="flex items-center"><input class="h-6 w-6 rounded-full border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-slate-900" type="checkbox"/></div><div><h3 class="font-semibold text-slate-100">Design Review</h3><p class="text-sm text-slate-400">Due Today</p></div></div>
+<div class="flex items-center gap-3"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">High</span><div class="h-3 w-3 rounded-full priority-high shadow-lg shadow-red-500/40"></div></div>
+</div>
+<div class="group flex items-center justify-between p-4 bg-slate-800/40 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+<div class="flex items-center gap-4"><div class="flex items-center"><input class="h-6 w-6 rounded-full border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-slate-900" type="checkbox"/></div><div><h3 class="font-semibold text-slate-100">Client Meeting</h3><p class="text-sm text-slate-400">Due Tomorrow</p></div></div>
+<div class="flex items-center gap-3"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">High</span><div class="h-3 w-3 rounded-full priority-high shadow-lg shadow-red-500/40"></div></div>
+</div>
+<div class="group flex items-center justify-between p-4 bg-slate-800/40 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+<div class="flex items-center gap-4"><div class="flex items-center"><input class="h-6 w-6 rounded-full border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-slate-900" type="checkbox"/></div><div><h3 class="font-semibold text-slate-100">Code Review</h3><p class="text-sm text-slate-400">Due Today</p></div></div>
+<div class="flex items-center gap-3"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Medium</span><div class="h-3 w-3 rounded-full priority-medium shadow-lg shadow-amber-500/40"></div></div>
+</div>
+<div class="group flex items-center justify-between p-4 bg-slate-800/40 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+<div class="flex items-center gap-4"><div class="flex items-center"><input class="h-6 w-6 rounded-full border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-slate-900" type="checkbox"/></div><div><h3 class="font-semibold text-slate-100">Update Documentation</h3><p class="text-sm text-slate-400">Friday</p></div></div>
+<div class="flex items-center gap-3"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Low</span><div class="h-3 w-3 rounded-full priority-low shadow-lg shadow-emerald-500/40"></div></div>
+</div>
+<div class="group flex items-center justify-between p-4 bg-slate-800/40 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+<div class="flex items-center gap-4"><div class="flex items-center"><input class="h-6 w-6 rounded-full border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-slate-900" type="checkbox"/></div><div><h3 class="font-semibold text-slate-100">Team Standup</h3><p class="text-sm text-slate-400">Daily</p></div></div>
+<div class="flex items-center gap-3"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Medium</span><div class="h-3 w-3 rounded-full priority-medium shadow-lg shadow-amber-500/40"></div></div>
+</div>
+<div class="group flex items-center justify-between p-4 bg-slate-800/40 border border-slate-800 rounded-xl hover:border-slate-700 transition-all">
+<div class="flex items-center gap-4"><div class="flex items-center"><input class="h-6 w-6 rounded-full border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-slate-900" type="checkbox"/></div><div><h3 class="font-semibold text-slate-100">Deploy v2.1</h3><p class="text-sm text-slate-400">March 25</p></div></div>
+<div class="flex items-center gap-3"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">High</span><div class="h-3 w-3 rounded-full priority-high shadow-lg shadow-red-500/40"></div></div>
+</div>
+</div>
+</main>
+<nav class="sticky bottom-0 bg-slate-900 border-t border-slate-800 pb-safe">
+<div class="max-w-2xl mx-auto flex justify-around items-center px-4 py-3">
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition-colors" href="01-taskflow-dashboard.html"><span class="material-symbols-outlined text-2xl">home</span><span class="text-[10px] font-medium">Home</span></a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#"><span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">task_alt</span><span class="text-[10px] font-medium">Tasks</span></a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition-colors" href="#"><span class="material-symbols-outlined text-2xl">calendar_month</span><span class="text-[10px] font-medium">Calendar</span></a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition-colors" href="03-taskflow-profile.html"><span class="material-symbols-outlined text-2xl">person</span><span class="text-[10px] font-medium">Profile</span></a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition-colors" href="05-taskflow-settings.html"><span class="material-symbols-outlined text-2xl">settings</span><span class="text-[10px] font-medium">Settings</span></a>
+</div>
+</nav>
+</body></html>
