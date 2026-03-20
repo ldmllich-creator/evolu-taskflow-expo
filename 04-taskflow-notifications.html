@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#3c83f6", "background-light": "#f5f7f8", "background-dark": "#0F172A" }, fontFamily: { "display": ["Public Sans"] }, borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"} } } }
+    </script>
+<style>body { min-height: max(884px, 100dvh); }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden border-x border-slate-200 dark:border-slate-800">
+<header class="flex items-center bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between sticky top-0 z-10">
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] flex-1">Notifications</h2>
+<button class="text-primary text-sm font-bold leading-normal tracking-[0.015em] shrink-0 hover:opacity-80 transition-opacity">Mark All Read</button>
+</header>
+<div class="flex px-4 py-4">
+<div class="flex h-11 flex-1 items-center justify-center rounded-xl bg-slate-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm text-slate-400 has-[:checked]:text-white text-sm font-semibold leading-normal transition-all"><span class="truncate">All</span><input checked="" class="invisible w-0" name="filter" type="radio" value="All"/></label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm text-slate-400 has-[:checked]:text-white text-sm font-semibold leading-normal transition-all"><span class="truncate">Unread</span><input class="invisible w-0" name="filter" type="radio" value="Unread"/></label>
+</div>
+</div>
+<main class="flex-1 overflow-y-auto px-1">
+<div class="flex items-start gap-4 px-4 py-4 hover:bg-slate-800/50 transition-colors cursor-pointer"><div class="flex items-center justify-center rounded-xl bg-green-500/10 text-green-500 shrink-0 size-12"><span class="material-symbols-outlined text-[24px]">check_circle</span></div><div class="flex flex-col flex-1 gap-0.5"><div class="flex justify-between items-center"><p class="text-base font-semibold leading-tight">Task Completed</p><p class="text-slate-400 text-xs font-medium">2 min ago</p></div><p class="text-slate-400 text-sm font-normal leading-relaxed line-clamp-2">Design Review has been completed</p></div></div>
+<div class="flex items-start gap-4 px-4 py-4 hover:bg-slate-800/50 transition-colors cursor-pointer border-t border-slate-800"><div class="flex items-center justify-center rounded-xl bg-primary/10 text-primary shrink-0 size-12"><span class="material-symbols-outlined text-[24px]">chat_bubble</span></div><div class="flex flex-col flex-1 gap-0.5"><div class="flex justify-between items-center"><p class="text-base font-semibold leading-tight">New Comment</p><p class="text-slate-400 text-xs font-medium">15 min ago</p></div><p class="text-slate-400 text-sm font-normal leading-relaxed line-clamp-2">Alex commented on Code Sync</p></div></div>
+<div class="flex items-start gap-4 px-4 py-4 hover:bg-slate-800/50 transition-colors cursor-pointer border-t border-slate-800"><div class="flex items-center justify-center rounded-xl bg-orange-500/10 text-orange-500 shrink-0 size-12"><span class="material-symbols-outlined text-[24px]">warning</span></div><div class="flex flex-col flex-1 gap-0.5"><div class="flex justify-between items-center"><p class="text-base font-semibold leading-tight">Deadline Approaching</p><p class="text-slate-400 text-xs font-medium">1 hr ago</p></div><p class="text-slate-400 text-sm font-normal leading-relaxed line-clamp-2">Deploy v2.1 due in 2 hours</p></div></div>
+<div class="flex items-start gap-4 px-4 py-4 hover:bg-slate-800/50 transition-colors cursor-pointer border-t border-slate-800"><div class="flex items-center justify-center rounded-xl bg-amber-500/10 text-amber-500 shrink-0 size-12"><span class="material-symbols-outlined text-[24px]">emoji_events</span></div><div class="flex flex-col flex-1 gap-0.5"><div class="flex justify-between items-center"><p class="text-base font-semibold leading-tight">Achievement Unlocked</p><p class="text-slate-400 text-xs font-medium">3 hrs ago</p></div><p class="text-slate-400 text-sm font-normal leading-relaxed line-clamp-2">You earned Streak Master badge!</p></div></div>
+<div class="flex items-start gap-4 px-4 py-4 hover:bg-slate-800/50 transition-colors cursor-pointer border-t border-slate-800"><div class="flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-500 shrink-0 size-12"><span class="material-symbols-outlined text-[24px]">group</span></div><div class="flex flex-col flex-1 gap-0.5"><div class="flex justify-between items-center"><p class="text-base font-semibold leading-tight">Team Update</p><p class="text-slate-400 text-xs font-medium">Yesterday</p></div><p class="text-slate-400 text-sm font-normal leading-relaxed line-clamp-2">Sarah joined Project Alpha</p></div></div>
+<div class="h-20"></div>
+</main>
+<nav class="fixed bottom-0 w-full max-w-md bg-slate-900/80 backdrop-blur-xl border-t border-slate-800 px-4 pb-6 pt-2">
+<div class="flex items-center justify-between gap-1">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary transition-colors" href="01-taskflow-dashboard.html"><span class="material-symbols-outlined text-[24px]">home</span><p class="text-[10px] font-semibold uppercase tracking-wider">Home</p></a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary transition-colors" href="02-taskflow-tasks.html"><span class="material-symbols-outlined text-[24px]">check_box</span><p class="text-[10px] font-semibold uppercase tracking-wider">Tasks</p></a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[24px]">calendar_today</span><p class="text-[10px] font-semibold uppercase tracking-wider">Calendar</p></a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary transition-colors" href="03-taskflow-profile.html"><span class="material-symbols-outlined text-[24px]">person</span><p class="text-[10px] font-semibold uppercase tracking-wider">Profile</p></a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary transition-colors" href="05-taskflow-settings.html"><span class="material-symbols-outlined text-[24px]">settings</span><p class="text-[10px] font-semibold uppercase tracking-wider">Settings</p></a>
+</div>
+</nav>
+</div>
+</body></html>
